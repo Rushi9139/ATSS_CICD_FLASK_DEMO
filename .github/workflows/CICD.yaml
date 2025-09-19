@@ -15,12 +15,16 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      - name: List files in repo root (debugging)
+        run: ls -la
+
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.9'  # or whichever Python version you want
+          python-version: '3.13'  # Updated to Python 3.13
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+
